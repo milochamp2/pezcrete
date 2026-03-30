@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── CSS Variables ─────────────────────────────── */
+:root {
+  --black:      #0A0A0A;
+  --dark:       #1A1A1A;
+  --mid:        #111111;
+  --grey-900:   #333333;
+  --grey-700:   #555555;
+  --grey-500:   #888888;
+  --grey-200:   #D4D4D4;
+  --light:      #F5F5F5;
+  --white:      #FFFFFF;
+
+  --font-heading: var(--font-bebas), "Oswald", "Impact", sans-serif;
+  --font-body:    var(--font-instrument), system-ui, sans-serif;
+}
+
+/* ── Base ──────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+  background-color: var(--black);
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--light);
+  background-color: var(--black);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Grain texture ─────────────────────────────── */
+.grain {
+  position: relative;
+}
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  background-repeat: repeat;
+  z-index: 1;
+}
+
+/* ── Scroll-reveal animation classes ───────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delays */
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+
+/* ── Navbar ────────────────────────────────────── */
+.nav-scrolled {
+  background-color: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+/* ── Service cards ─────────────────────────────── */
+.service-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.18);
+}
+
+/* ── CTA Button ────────────────────────────────── */
+.btn-primary {
+  display: inline-block;
+  background-color: var(--white);
+  color: var(--black);
+  font-family: var(--font-heading);
+  letter-spacing: 0.12em;
+  padding: 0.9rem 2.5rem;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+.btn-primary:hover {
+  background-color: var(--grey-200);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  display: inline-block;
+  border: 1px solid var(--grey-500);
+  color: var(--light);
+  font-family: var(--font-heading);
+  letter-spacing: 0.12em;
+  padding: 0.85rem 2.4rem;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
+}
+.btn-outline:hover {
+  border-color: var(--white);
+  background-color: rgba(255,255,255,0.05);
+  transform: translateY(-1px);
+}
+
+/* ── Gallery placeholder ───────────────────────── */
+.gallery-placeholder {
+  background-color: var(--grey-900);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--grey-500);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ── Form ──────────────────────────────────────── */
+.form-input {
+  width: 100%;
+  background-color: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--light);
+  padding: 0.85rem 1rem;
+  font-family: var(--font-body);
+  font-size: 0.925rem;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+  outline: none;
+}
+.form-input::placeholder {
+  color: var(--grey-500);
+}
+.form-input:focus {
+  border-color: rgba(255,255,255,0.35);
+  background-color: rgba(255,255,255,0.07);
+}
