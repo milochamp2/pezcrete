@@ -49,19 +49,6 @@ export default function Contact() {
       <div className="absolute top-0 left-0 right-0 h-px" style={{ background: "rgba(255,255,255,0.05)" }} />
 
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
-        {/* Section heading */}
-        <div className="mb-10 sm:mb-16 reveal">
-          <span className="section-label" style={{ color: "var(--grey-700)" }}>
-            Reach out
-          </span>
-          <h2
-            className="mt-4 text-[clamp(3rem,8vw,6rem)] leading-none tracking-wide text-white"
-            style={{ fontFamily: "var(--font-heading)" }}
-          >
-            GET IN TOUCH
-          </h2>
-        </div>
-
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
 
           {/* Left — Contact info */}

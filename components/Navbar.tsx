@@ -44,16 +44,28 @@ export default function Navbar() {
         style={{ height: "3.75rem" }}
       >
         {/* Logo */}
-        <Link href="/" className="flex items-center opacity-95 hover:opacity-100 transition-opacity duration-300">
+        <Link href="/" className="flex items-center gap-3 opacity-95 hover:opacity-100 transition-opacity duration-300">
           <Image
             src="/logo/pezcrete%20logo.png"
             alt="Pezcrete"
-            width={160}
-            height={50}
+            width={180}
+            height={56}
             priority
             className="w-auto object-contain"
-            style={{ height: "clamp(2.25rem, 5vw, 3rem)" }}
+            style={{ height: "clamp(2.75rem, 6vw, 3.75rem)" }}
           />
+          <span
+            className="hidden sm:block"
+            style={{
+              fontFamily: "var(--font-heading)",
+              letterSpacing: "0.18em",
+              fontSize: "clamp(1.25rem, 3vw, 1.75rem)",
+              color: "var(--white)",
+              lineHeight: 1,
+            }}
+          >
+            PEZCRETE
+          </span>
         </Link>
 
         {/* Desktop nav */}

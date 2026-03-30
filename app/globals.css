@@ -282,4 +282,4 @@ body {
 ::-webkit-scrollbar-track { background: var(--black); }
 ::-webkit-scrollbar-thumb { background: var(--grey-900); }
 ::-webkit-scrollbar-thumb:hover { background: var(--grey-700); }
-::selection { background-color: rgba(255,255,255,0.15); color: var(--white); }
+::selection { background-color: var(--grey-900); color: var(--white); }
