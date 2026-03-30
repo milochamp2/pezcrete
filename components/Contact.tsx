@@ -67,8 +67,8 @@ export default function Contact() {
           {/* Left — Contact info */}
           <div className="reveal reveal-delay-1">
             <p
-              className="text-base leading-relaxed mb-12"
-              style={{ color: "var(--grey-500)" }}
+              className="text-lg leading-relaxed mb-12"
+              style={{ color: "var(--text-on-dark-muted)" }}
             >
               Ready to start your project? Get in touch for a free,
               no-obligation quote. We service Melbourne and all surrounding suburbs.
@@ -95,7 +95,7 @@ export default function Contact() {
                       {item.label}
                     </p>
                     <p
-                      className="text-sm truncate transition-colors duration-300 group-hover:text-white"
+                      className="text-base truncate transition-colors duration-300 group-hover:text-white"
                       style={{ color: "var(--grey-200)" }}
                     >
                       {item.value}

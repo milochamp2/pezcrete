@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Bebas_Neue, Instrument_Sans } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import SmoothScroll from "@/components/SmoothScroll";
 import PageLoader from "@/components/PageLoader";
 
@@ -30,26 +32,32 @@ export const metadata: Metadata = {
     "concrete contractor Melbourne",
     "Pezcrete",
   ],
+  icons: {
+    icon:      "/logo/pezcrete%20logo.png",
+    shortcut:  "/logo/pezcrete%20logo.png",
+    apple:     "/logo/pezcrete%20logo.png",
+  },
   openGraph: {
     title: "Pezcrete | Concrete Construction Melbourne",
     description:
       "Premium concrete construction services across Melbourne and surrounds.",
     type: "website",
     locale: "en_AU",
+    images: [{ url: "/logo/pezcrete%20logo.png", width: 400, height: 200, alt: "Pezcrete" }],
   },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${bebasNeue.variable} ${instrumentSans.variable}`}>
       <body className="font-body antialiased">
         <PageLoader />
         <SmoothScroll />
-        {children}
+        <Navbar />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );

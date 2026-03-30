@@ -94,8 +94,8 @@ export default function Services() {
             </h2>
           </div>
           <p
-            className="max-w-xs text-sm leading-relaxed reveal reveal-delay-2"
-            style={{ color: "var(--grey-700)" }}
+            className="max-w-xs text-base leading-relaxed reveal reveal-delay-2"
+            style={{ color: "var(--text-on-dark-muted)" }}
           >
             Every project handled with trade expertise and precision — on time, every time.
           </p>
@@ -128,7 +128,7 @@ export default function Services() {
               >
                 {service.title}
               </h3>
-              <p className="text-sm leading-relaxed" style={{ color: "var(--grey-700)" }}>
+              <p className="text-base leading-relaxed" style={{ color: "var(--text-on-light-muted)" }}>
                 {service.description}
               </p>
             </div>
@@ -146,7 +146,7 @@ export default function Services() {
               >
                 06
               </span>
-              <p className="mt-8 text-sm leading-relaxed" style={{ color: "var(--grey-500)" }}>
+              <p className="mt-8 text-base leading-relaxed" style={{ color: "var(--text-on-dark-muted)" }}>
                 Don&rsquo;t see what you need? We handle a wide range of concrete
                 projects across Melbourne and surrounds.
               </p>

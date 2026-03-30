@@ -25,8 +25,8 @@ export default function ServiceArea() {
             style={{ backgroundColor: "var(--grey-500)" }}
           />
           <p
-            className="mt-6 text-base"
-            style={{ color: "var(--grey-700)" }}
+            className="mt-6 text-lg"
+            style={{ color: "var(--text-on-light-muted)" }}
           >
             Proudly serving Melbourne and surrounding suburbs
           </p>
