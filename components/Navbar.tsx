@@ -24,8 +24,13 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close mobile menu on route change
   useEffect(() => { setMenuOpen(false); }, [pathname]);
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [menuOpen]);
 
   return (
     <header
@@ -33,8 +38,11 @@ export default function Navbar() {
         scrolled || !isHome ? "nav-scrolled" : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-18 lg:h-22" style={{ height: "4.5rem" }}>
-
+      {/* Main bar */}
+      <div
+        className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 flex items-center justify-between"
+        style={{ height: "3.75rem" }}
+      >
         {/* Logo */}
         <Link href="/" className="flex items-center opacity-95 hover:opacity-100 transition-opacity duration-300">
           <Image
@@ -44,19 +52,19 @@ export default function Navbar() {
             height={50}
             priority
             className="w-auto object-contain"
-            style={{ height: "3.5rem" }}
+            style={{ height: "clamp(2.25rem, 5vw, 3rem)" }}
           />
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-7 lg:gap-9">
           {navLinks.map((link) => {
             const active = pathname === link.href;
             return (
               <Link
                 key={link.href}
                 href={link.href}
-                className="relative text-sm tracking-widest uppercase transition-colors duration-300 py-1"
+                className="relative text-xs tracking-widest uppercase transition-colors duration-300 py-1"
                 style={{ color: active ? "var(--white)" : "var(--grey-300)" }}
               >
                 {link.label}
@@ -67,45 +75,63 @@ export default function Navbar() {
               </Link>
             );
           })}
-          <Link href="/contact" className="btn-primary text-sm" style={{ padding: "0.6rem 1.5rem" }}>
+          <Link
+            href="/contact"
+            className="btn-primary"
+            style={{ fontSize: "0.75rem", padding: "0.55rem 1.35rem" }}
+          >
             <span>Get a Quote</span>
           </Link>
         </nav>
 
-        {/* Mobile hamburger */}
+        {/* Hamburger — min 44px tap area */}
         <button
-          className="md:hidden flex flex-col gap-[5px] p-2"
-          aria-label="Toggle menu"
+          className="md:hidden flex flex-col justify-center items-center gap-[5px]"
+          style={{ width: "44px", height: "44px" }}
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
           onClick={() => setMenuOpen((v) => !v)}
         >
-          <span className={`block w-5 h-px bg-white transition-all duration-300 origin-center ${menuOpen ? "rotate-45 translate-y-[9px]" : ""}`} />
+          <span className={`block w-5 h-px bg-white transition-all duration-300 origin-center ${menuOpen ? "rotate-45 translate-y-[6px]" : ""}`} />
           <span className={`block w-5 h-px bg-white transition-all duration-300 ${menuOpen ? "opacity-0 scale-x-0" : ""}`} />
-          <span className={`block w-5 h-px bg-white transition-all duration-300 origin-center ${menuOpen ? "-rotate-45 -translate-y-[9px]" : ""}`} />
+          <span className={`block w-5 h-px bg-white transition-all duration-300 origin-center ${menuOpen ? "-rotate-45 -translate-y-[6px]" : ""}`} />
         </button>
       </div>
 
-      {/* Mobile drawer */}
+      {/* Mobile full-screen drawer */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-500 ${menuOpen ? "max-h-96" : "max-h-0"}`}
-        style={{ backgroundColor: "rgba(10,10,10,0.97)", backdropFilter: "blur(20px)" }}
+        className={`md:hidden fixed inset-0 top-[3.75rem] transition-all duration-500 ${
+          menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        }`}
+        style={{ backgroundColor: "rgba(10,10,10,0.98)", backdropFilter: "blur(24px)" }}
       >
-        <nav className="flex flex-col px-6 py-6 gap-5 border-t" style={{ borderColor: "rgba(255,255,255,0.05)" }}>
+        <nav className="flex flex-col px-6 pt-8 pb-10 gap-1 h-full">
           {navLinks.map((link) => {
             const active = pathname === link.href;
             return (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm tracking-widest uppercase py-0.5 transition-colors duration-200"
-                style={{ color: active ? "var(--white)" : "var(--grey-300)" }}
+                className="flex items-center text-2xl tracking-widest uppercase transition-colors duration-200 border-b"
+                style={{
+                  color: active ? "var(--white)" : "var(--grey-300)",
+                  borderColor: "rgba(255,255,255,0.05)",
+                  minHeight: "64px",
+                  fontFamily: "var(--font-heading)",
+                  letterSpacing: "0.15em",
+                }}
               >
                 {link.label}
               </Link>
             );
           })}
-          <Link href="/contact" className="btn-primary text-sm text-center mt-2">
-            <span>Get a Quote</span>
-          </Link>
+          <div className="mt-8 flex flex-col gap-3">
+            <Link href="/contact" className="btn-primary text-center">
+              <span>Get a Quote</span>
+            </Link>
+            <a href="tel:0422340335" className="btn-outline text-center">
+              <span>0422 340 335</span>
+            </a>
+          </div>
         </nav>
       </div>
     </header>

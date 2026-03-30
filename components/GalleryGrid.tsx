@@ -63,29 +63,26 @@ const InstagramIcon = () => (
 
 export default function GalleryGrid() {
   return (
-    <section className="py-12 lg:py-20" style={{ backgroundColor: "var(--black)" }}>
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+    <section className="py-8 sm:py-12 lg:py-20" style={{ backgroundColor: "var(--black)" }}>
+      <div className="max-w-7xl mx-auto px-3 sm:px-5 lg:px-10">
 
-        {/* Masonry-style grid */}
-        <div className="columns-2 md:columns-3 lg:columns-4 gap-2 lg:gap-3 space-y-2 lg:space-y-3">
+        {/* Uniform grid — 2 cols mobile, 3 md, 4 lg */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-1.5 sm:gap-2 lg:gap-3">
           {photos.map((photo, i) => (
             <div
               key={i}
-              className="gallery-cell break-inside-avoid reveal reveal-delay-1"
-              style={{ display: "block" }}
+              className="gallery-cell reveal reveal-delay-1"
+              style={{ aspectRatio: i % 7 === 0 ? "3/4" : "1/1" }}
             >
-              <div className="relative overflow-hidden" style={{ aspectRatio: i % 5 === 0 ? "3/4" : i % 3 === 0 ? "4/3" : "1/1" }}>
-                <Image
-                  src={photo.src}
-                  alt={photo.label}
-                  fill
-                  sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
-                  className="object-cover transition-transform duration-500"
-                  style={{ transitionTimingFunction: "var(--ease-out-expo)" }}
-                />
-                {/* Hover overlay — no text, subtle dark tint only */}
-                <div className="gallery-cell-overlay" />
-              </div>
+              <Image
+                src={photo.src}
+                alt={photo.label}
+                fill
+                sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                className="object-cover transition-transform duration-500"
+                style={{ transitionTimingFunction: "var(--ease-out-expo)" }}
+              />
+              <div className="gallery-cell-overlay" />
             </div>
           ))}
         </div>

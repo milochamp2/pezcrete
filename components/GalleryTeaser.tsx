@@ -9,8 +9,8 @@ const preview = [
 
 export default function GalleryTeaser() {
   return (
-    <section className="py-24 lg:py-32" style={{ backgroundColor: "var(--black)" }}>
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+    <section className="py-16 sm:py-24 lg:py-32" style={{ backgroundColor: "var(--black)" }}>
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
 
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-6">

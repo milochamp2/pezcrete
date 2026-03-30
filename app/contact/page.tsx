@@ -10,16 +10,16 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      <div className="pt-36 pb-20 grain" style={{ backgroundColor: "var(--black)" }}>
-        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+      <div className="pt-24 pb-12 sm:pt-32 sm:pb-16 lg:pt-40 lg:pb-20 grain" style={{ backgroundColor: "var(--black)" }}>
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
           <span className="section-label">Reach out</span>
           <h1
             className="mt-5 leading-none tracking-wide text-white"
-            style={{ fontFamily: "var(--font-heading)", fontSize: "clamp(4rem,12vw,9rem)" }}
+            style={{ fontFamily: "var(--font-heading)", fontSize: "clamp(3rem,12vw,9rem)" }}
           >
             GET IN<br />TOUCH
           </h1>
-          <p className="mt-8 text-lg max-w-xl" style={{ color: "var(--text-on-dark-muted)" }}>
+          <p className="mt-6 text-base lg:text-lg max-w-xl" style={{ color: "var(--text-on-dark-muted)" }}>
             Free, no-obligation quotes. We service Melbourne and all surrounding suburbs.
           </p>
         </div>

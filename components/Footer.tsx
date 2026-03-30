@@ -13,7 +13,7 @@ export default function Footer() {
 
   return (
     <footer style={{ backgroundColor: "var(--mid)", borderTop: "1px solid rgba(255,255,255,0.05)" }}>
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 py-14">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 py-10 sm:py-14">
 
         {/* Top row */}
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-10 mb-12">
@@ -25,7 +25,7 @@ export default function Footer() {
               width={160}
               height={48}
               className="w-auto object-contain"
-              style={{ height: "3.75rem" }}
+              style={{ height: "clamp(2.5rem, 5vw, 3.5rem)" }}
             />
           </Link>
 

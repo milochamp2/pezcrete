@@ -75,13 +75,13 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="py-24 lg:py-36"
+      className="py-16 sm:py-24 lg:py-36"
       style={{ backgroundColor: "var(--light)" }}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
 
         {/* Heading row */}
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-16 gap-6">
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-10 sm:mb-16 gap-5">
           <div className="reveal">
             <span className="section-label" style={{ color: "var(--grey-700)" }}>
               What we do
@@ -106,7 +106,7 @@ export default function Services() {
           {services.map((service, i) => (
             <div
               key={service.title}
-              className={`service-card p-8 border bg-white reveal reveal-delay-${i + 1}`}
+              className={`service-card p-5 sm:p-8 border bg-white reveal reveal-delay-${i + 1}`}
               style={{ borderColor: "var(--grey-200)" }}
             >
               {/* Number + icon row */}
@@ -136,7 +136,7 @@ export default function Services() {
 
           {/* CTA card */}
           <div
-            className="service-card service-card-dark p-8 flex flex-col justify-between reveal reveal-delay-5"
+            className="service-card service-card-dark p-5 sm:p-8 flex flex-col justify-between reveal reveal-delay-5"
             style={{ backgroundColor: "var(--black)" }}
           >
             <div>

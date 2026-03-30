@@ -42,15 +42,15 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="py-24 lg:py-36 grain relative"
+      className="py-16 sm:py-24 lg:py-36 grain relative"
       style={{ backgroundColor: "var(--black)" }}
     >
       {/* Top edge */}
       <div className="absolute top-0 left-0 right-0 h-px" style={{ background: "rgba(255,255,255,0.05)" }} />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
         {/* Section heading */}
-        <div className="mb-16 reveal">
+        <div className="mb-10 sm:mb-16 reveal">
           <span className="section-label" style={{ color: "var(--grey-700)" }}>
             Reach out
           </span>
