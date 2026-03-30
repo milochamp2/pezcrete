@@ -83,19 +83,8 @@ export default function GalleryGrid() {
                   className="object-cover transition-transform duration-500"
                   style={{ transitionTimingFunction: "var(--ease-out-expo)" }}
                 />
-                {/* Hover overlay */}
-                <div className="gallery-cell-overlay">
-                  <div>
-                    {photo.category && (
-                      <span
-                        className="text-xs tracking-widest uppercase block mb-1"
-                        style={{ color: "var(--grey-300)", fontFamily: "var(--font-heading)", letterSpacing: "0.18em" }}
-                      >
-                        {photo.category}
-                      </span>
-                    )}
-                  </div>
-                </div>
+                {/* Hover overlay — no text, subtle dark tint only */}
+                <div className="gallery-cell-overlay" />
               </div>
             </div>
           ))}

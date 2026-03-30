@@ -43,7 +43,6 @@ export default function GalleryTeaser() {
                 sizes="(max-width: 768px) 100vw, 33vw"
                 className="object-cover"
               />
-              <div className="gallery-cell-overlay" />
             </div>
           ))}
         </div>
