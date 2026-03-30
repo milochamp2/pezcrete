@@ -1,10 +1,10 @@
 import Link from "next/link";
+import Image from "next/image";
 
-// Preview — first 3 gallery slots shown on home page
 const preview = [
-  { label: "Concrete Driveway" },
-  { label: "Pool Surround"     },
-  { label: "Exposed Aggregate" },
+  { src: "/gallery/img%201.jpeg", label: "Concrete Work" },
+  { src: "/gallery/img%202.jpg",  label: "Concrete Work" },
+  { src: "/gallery/img%203.jpg",  label: "Concrete Work" },
 ];
 
 export default function GalleryTeaser() {
@@ -25,31 +25,25 @@ export default function GalleryTeaser() {
           </div>
           <Link
             href="/gallery"
-            className="text-sm tracking-widest uppercase reveal reveal-delay-1 transition-colors duration-300"
+            className="text-sm tracking-widest uppercase reveal reveal-delay-1 transition-colors duration-300 hover:text-white"
             style={{ color: "var(--grey-500)" }}
           >
             View All Work →
           </Link>
         </div>
 
-        {/* 3-col preview grid */}
+        {/* 3-col preview */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 reveal reveal-delay-1">
-          {preview.map((item) => (
-            <div
-              key={item.label}
-              className="gallery-cell"
-              style={{ height: "260px" }}
-            >
-              <div className="gallery-placeholder-inner">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8" style={{ color: "var(--grey-700)" }}>
-                  <rect x="3" y="3" width="18" height="18" rx="2" />
-                  <circle cx="8.5" cy="8.5" r="1.5" />
-                  <polyline points="21 15 16 10 5 21" />
-                </svg>
-                <span className="text-xs tracking-widest uppercase" style={{ color: "var(--grey-700)" }}>
-                  {item.label}
-                </span>
-              </div>
+          {preview.map((item, i) => (
+            <div key={i} className="gallery-cell" style={{ height: "280px" }}>
+              <Image
+                src={item.src}
+                alt={item.label}
+                fill
+                sizes="(max-width: 768px) 100vw, 33vw"
+                className="object-cover"
+              />
+              <div className="gallery-cell-overlay" />
             </div>
           ))}
         </div>

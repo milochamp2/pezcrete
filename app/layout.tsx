@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SmoothScroll from "@/components/SmoothScroll";
 import PageLoader from "@/components/PageLoader";
+import ScrollProgress from "@/components/ScrollProgress";
 
 const bebasNeue = Bebas_Neue({
   weight: "400",
@@ -55,6 +56,7 @@ export default function RootLayout({
       <body className="font-body antialiased">
         <PageLoader />
         <SmoothScroll />
+        <ScrollProgress />
         <Navbar />
         <main>{children}</main>
         <Footer />

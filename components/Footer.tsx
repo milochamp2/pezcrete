@@ -25,7 +25,7 @@ export default function Footer() {
               width={160}
               height={48}
               className="w-auto object-contain"
-              style={{ height: "3rem" }}
+              style={{ height: "3.75rem" }}
             />
           </Link>
 
