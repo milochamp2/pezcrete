@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Bebas_Neue, Instrument_Sans } from "next/font/google";
 import "./globals.css";
+import SmoothScroll from "@/components/SmoothScroll";
+import PageLoader from "@/components/PageLoader";
 
 const bebasNeue = Bebas_Neue({
   weight: "400",
@@ -45,6 +47,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${bebasNeue.variable} ${instrumentSans.variable}`}>
       <body className="font-body antialiased">
+        <PageLoader />
+        <SmoothScroll />
         {children}
       </body>
     </html>
