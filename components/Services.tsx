@@ -80,22 +80,11 @@ export default function Services() {
     >
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
 
-        {/* Heading row */}
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-10 sm:mb-16 gap-5">
-          <div className="reveal">
-            <span className="section-label" style={{ color: "var(--grey-700)" }}>
-              What we do
-            </span>
-            <h2
-              className="mt-4 text-[clamp(3rem,8vw,6rem)] leading-none tracking-wide"
-              style={{ color: "var(--black)", fontFamily: "var(--font-heading)" }}
-            >
-              OUR SERVICES
-            </h2>
-          </div>
+        {/* Subheading row */}
+        <div className="mb-10 sm:mb-16">
           <p
-            className="max-w-xs text-base leading-relaxed reveal reveal-delay-2"
-            style={{ color: "var(--text-on-dark-muted)" }}
+            className="max-w-xs text-base leading-relaxed reveal"
+            style={{ color: "var(--text-on-light-muted)" }}
           >
             Every project handled with trade expertise and precision — on time, every time.
           </p>

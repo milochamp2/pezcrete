@@ -30,13 +30,29 @@ const contactItems = [
 export default function Contact() {
   const [form, setForm] = useState({ name: "", phone: "", email: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
     setForm((p) => ({ ...p, [e.target.name]: e.target.value }));
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSending(true);
+    setError("");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error("Failed to send");
+      setSubmitted(true);
+    } catch {
+      setError("Something went wrong. Please try again or call us directly.");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -152,9 +168,12 @@ export default function Contact() {
                   </label>
                   <textarea id="message" name="message" required rows={5} placeholder="Tell us about your project…" value={form.message} onChange={handleChange} className="form-input resize-none" />
                 </div>
-                <button type="submit" className="btn-primary mt-3 w-full text-xs">
-                  <span>Send Message</span>
+                <button type="submit" disabled={sending} className="btn-primary mt-3 w-full text-xs" style={{ opacity: sending ? 0.6 : 1 }}>
+                  <span>{sending ? "Sending…" : "Send Message"}</span>
                 </button>
+                {error && (
+                  <p className="text-xs mt-2 text-center" style={{ color: "var(--grey-500)" }}>{error}</p>
+                )}
               </form>
             )}
           </div>

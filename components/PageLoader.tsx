@@ -1,8 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-
-const LETTERS = "PEZCRETE".split("");
+import Image from "next/image";
 
 export default function PageLoader() {
   const [phase, setPhase] = useState<"visible" | "leaving" | "gone">("visible");
@@ -51,7 +50,7 @@ export default function PageLoader() {
         }}
       />
 
-      {/* Center content — on top of panels */}
+      {/* Center content */}
       <div
         className="fixed inset-0 z-[201] flex flex-col items-center justify-center"
         style={{
@@ -60,23 +59,17 @@ export default function PageLoader() {
           pointerEvents: "none",
         }}
       >
-        {/* Animated letters */}
-        <div style={{ overflow: "hidden", display: "flex" }}>
-          {LETTERS.map((letter, i) => (
-            <span
-              key={i}
-              style={{
-                fontFamily: "var(--font-heading)",
-                fontSize: "clamp(3.5rem, 14vw, 9rem)",
-                letterSpacing: "0.12em",
-                color: "var(--white)",
-                display: "inline-block",
-                animation: `loaderLetterRise 0.7s cubic-bezier(0.16, 1, 0.3, 1) ${i * 0.055}s both`,
-              }}
-            >
-              {letter}
-            </span>
-          ))}
+        {/* Logo */}
+        <div style={{ animation: "loaderLogoRise 0.8s cubic-bezier(0.16, 1, 0.3, 1) both" }}>
+          <Image
+            src="/logo/pezcrete%20logo.png"
+            alt="Pezcrete"
+            width={240}
+            height={72}
+            priority
+            className="w-auto object-contain"
+            style={{ height: "clamp(4rem, 14vw, 7rem)" }}
+          />
         </div>
 
         {/* Progress bar */}
@@ -110,7 +103,7 @@ export default function PageLoader() {
             textTransform: "uppercase",
             color: "var(--grey-700)",
             marginTop: "1.25rem",
-            animation: "loaderFadeUp 0.6s ease 0.45s both",
+            animation: "loaderFadeUp 0.6s ease 0.5s both",
           }}
         >
           Melbourne &amp; Surrounds
@@ -118,8 +111,8 @@ export default function PageLoader() {
       </div>
 
       <style>{`
-        @keyframes loaderLetterRise {
-          from { transform: translateY(110%); opacity: 0; }
+        @keyframes loaderLogoRise {
+          from { transform: translateY(24px); opacity: 0; }
           to   { transform: translateY(0);    opacity: 1; }
         }
         @keyframes loaderBarFill {

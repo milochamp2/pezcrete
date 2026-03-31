@@ -30,8 +30,8 @@ export default function ServicesPage() {
         </div>
       </div>
 
-      <ServicesMarquee />
       <Services />
+      <ServicesMarquee />
       <CtaStrip />
     </>
   );
