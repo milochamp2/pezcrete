@@ -16,10 +16,11 @@ interface Props {
   name: string;
   phone: string;
   email: string;
+  service: string;
   message: string;
 }
 
-export default function ContactEmail({ name, phone, email, message }: Props) {
+export default function ContactEmail({ name, phone, email, service, message }: Props) {
   return (
     <Html lang="en">
       <Head />
@@ -67,6 +68,16 @@ export default function ContactEmail({ name, phone, email, message }: Props) {
                 <Text style={value}>{email}</Text>
               </Column>
             </Row>
+            {service && (
+              <Row>
+                <Column style={labelCol}>
+                  <Text style={label}>Service</Text>
+                </Column>
+                <Column style={valueCol}>
+                  <Text style={{ ...value, ...serviceBadge }}>{service}</Text>
+                </Column>
+              </Row>
+            )}
 
             <Hr style={divider} />
 
@@ -187,6 +198,15 @@ const value: React.CSSProperties = {
   color: "#1A1A1A",
   margin: 0,
   fontWeight: "500",
+};
+
+const serviceBadge: React.CSSProperties = {
+  display: "inline-block",
+  backgroundColor: "#0A0A0A",
+  color: "#ffffff",
+  padding: "2px 10px",
+  borderRadius: "2px",
+  fontSize: "13px",
 };
 
 const messageBox: React.CSSProperties = {

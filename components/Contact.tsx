@@ -27,8 +27,17 @@ const contactItems = [
   { icon: <InstaIcon />, label: "Instagram", value: "@pezcrete", href: "https://www.instagram.com/pezcrete/" },
 ];
 
+const services = [
+  "Concrete Placement",
+  "Boxing & Steel Work",
+  "Exposed Aggregate",
+  "Pool Surrounds",
+  "Structural Concrete",
+  "Other",
+];
+
 export default function Contact() {
-  const [form, setForm] = useState({ name: "", phone: "", email: "", message: "" });
+  const [form, setForm] = useState({ name: "", phone: "", email: "", service: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState("");
@@ -161,6 +170,24 @@ export default function Contact() {
                     Email *
                   </label>
                   <input id="email" name="email" type="email" required placeholder="your@email.com" value={form.email} onChange={handleChange} className="form-input" />
+                </div>
+                <div>
+                  <label htmlFor="service" className="block text-[0.65rem] tracking-widest uppercase mb-2" style={{ color: "var(--grey-700)" }}>
+                    Service Required
+                  </label>
+                  <select
+                    id="service"
+                    name="service"
+                    value={form.service}
+                    onChange={(e) => setForm((p) => ({ ...p, service: e.target.value }))}
+                    className="form-input"
+                    style={{ cursor: "pointer", appearance: "none", backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E")`, backgroundRepeat: "no-repeat", backgroundPosition: "right 1rem center" }}
+                  >
+                    <option value="" style={{ backgroundColor: "#111" }}>Select a service…</option>
+                    {services.map((s) => (
+                      <option key={s} value={s} style={{ backgroundColor: "#111" }}>{s}</option>
+                    ))}
+                  </select>
                 </div>
                 <div>
                   <label htmlFor="message" className="block text-[0.65rem] tracking-widest uppercase mb-2" style={{ color: "var(--grey-700)" }}>
