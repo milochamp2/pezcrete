@@ -28,6 +28,11 @@ export async function POST(req: NextRequest) {
     replyTo: email,
     subject: `New Quote Request — ${name}${service ? ` · ${service}` : ""}`,
     html,
+    headers: {
+      "X-Priority": "1",
+      "X-MSMail-Priority": "High",
+      "Importance": "high",
+    },
   });
 
   return NextResponse.json({ ok: true });
