@@ -114,7 +114,7 @@ export default function Navbar() {
         className={`md:hidden fixed inset-0 top-[3.75rem] transition-all duration-500 ${
           menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
-        style={{ backgroundColor: "rgba(10,10,10,0.98)", backdropFilter: "blur(24px)" }}
+        style={{ backgroundColor: "#0A0A0A" }}
       >
         <nav className="flex flex-col px-6 pt-8 pb-10 gap-1 h-full">
           {navLinks.map((link) => {
