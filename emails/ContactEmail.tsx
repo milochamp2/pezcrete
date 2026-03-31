@@ -6,6 +6,7 @@ import {
   Heading,
   Hr,
   Html,
+  Img,
   Preview,
   Row,
   Section,
@@ -30,7 +31,13 @@ export default function ContactEmail({ name, phone, email, service, message }: P
 
           {/* Header */}
           <Section style={header}>
-            <Heading style={logoText}>PEZCRETE</Heading>
+            <Img
+              src="https://pezcrete.vercel.app/logo/pezcrete%20logo.png"
+              alt="Pezcrete"
+              width="160"
+              height="48"
+              style={{ margin: "0 auto", display: "block", objectFit: "contain" }}
+            />
             <Text style={headerSub}>Melbourne &amp; Surrounds · Concrete Construction</Text>
           </Section>
 
@@ -130,16 +137,8 @@ const container: React.CSSProperties = {
 
 const header: React.CSSProperties = {
   backgroundColor: "#0A0A0A",
-  padding: "32px 40px 28px",
+  padding: "28px 40px 24px",
   textAlign: "center",
-};
-
-const logoText: React.CSSProperties = {
-  color: "#ffffff",
-  fontSize: "28px",
-  letterSpacing: "6px",
-  fontWeight: "700",
-  margin: "0 0 6px",
 };
 
 const headerSub: React.CSSProperties = {
