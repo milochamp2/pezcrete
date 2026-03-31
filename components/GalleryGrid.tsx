@@ -67,12 +67,12 @@ export default function GalleryGrid() {
       <div className="max-w-7xl mx-auto px-3 sm:px-5 lg:px-10">
 
         {/* Uniform grid — 2 cols mobile, 3 md, 4 lg */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-1.5 sm:gap-2 lg:gap-3">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
           {photos.map((photo, i) => (
             <div
               key={i}
               className="gallery-cell reveal reveal-delay-1"
-              style={{ aspectRatio: i % 7 === 0 ? "3/4" : "1/1" }}
+              style={{ aspectRatio: "1/1" }}
             >
               <Image
                 src={photo.src}
