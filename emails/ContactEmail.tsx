@@ -31,14 +31,30 @@ export default function ContactEmail({ name, phone, email, service, message }: P
 
           {/* Header */}
           <Section style={header}>
-            <Img
-              src="https://pezcrete.vercel.app/logo/pezcrete%20logo.png"
-              alt="Pezcrete"
-              width="160"
-              height="48"
-              style={{ margin: "0 auto", display: "block", objectFit: "contain" }}
-            />
-            <Text style={headerSub}>Melbourne &amp; Surrounds · Concrete Construction</Text>
+            <Row>
+              <Column style={{ textAlign: "center" }}>
+                {/* Logo icon + brand name inline */}
+                <table align="center" style={{ margin: "0 auto" }}>
+                  <tbody>
+                    <tr>
+                      <td style={{ verticalAlign: "middle", paddingRight: "12px" }}>
+                        <Img
+                          src="https://pezcrete.vercel.app/logo/pezcrete%20logo.png"
+                          alt=""
+                          width="52"
+                          height="52"
+                          style={{ display: "block", objectFit: "contain" }}
+                        />
+                      </td>
+                      <td style={{ verticalAlign: "middle" }}>
+                        <span style={logoText}>PEZCRETE</span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <Text style={headerSub}>Melbourne &amp; Surrounds · Concrete Construction</Text>
+              </Column>
+            </Row>
           </Section>
 
           {/* Body */}
@@ -139,6 +155,15 @@ const header: React.CSSProperties = {
   backgroundColor: "#0A0A0A",
   padding: "28px 40px 24px",
   textAlign: "center",
+};
+
+const logoText: React.CSSProperties = {
+  color: "#ffffff",
+  fontSize: "26px",
+  letterSpacing: "6px",
+  fontWeight: "700",
+  fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
+  lineHeight: 1,
 };
 
 const headerSub: React.CSSProperties = {
