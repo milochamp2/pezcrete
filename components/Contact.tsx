@@ -37,7 +37,7 @@ const services = [
 ];
 
 export default function Contact() {
-  const [form, setForm] = useState({ name: "", phone: "", email: "", service: "", message: "" });
+  const [form, setForm] = useState({ name: "", phone: "", email: "", address: "", service: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState("");
@@ -170,6 +170,12 @@ export default function Contact() {
                     Email *
                   </label>
                   <input id="email" name="email" type="email" required placeholder="your@email.com" value={form.email} onChange={handleChange} className="form-input" />
+                </div>
+                <div>
+                  <label htmlFor="address" className="block text-[0.65rem] tracking-widest uppercase mb-2" style={{ color: "var(--grey-700)" }}>
+                    Project Address
+                  </label>
+                  <input id="address" name="address" type="text" placeholder="123 Example St, Suburb VIC" value={form.address} onChange={handleChange} className="form-input" />
                 </div>
                 <div>
                   <label htmlFor="service" className="block text-[0.65rem] tracking-widest uppercase mb-2" style={{ color: "var(--grey-700)" }}>

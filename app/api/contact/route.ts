@@ -4,14 +4,14 @@ import { render } from "@react-email/components";
 import ContactEmail from "@/emails/ContactEmail";
 
 export async function POST(req: NextRequest) {
-  const { name, phone, email, service, message } = await req.json();
+  const { name, phone, email, address, service, message } = await req.json();
 
   if (!name || !email || !message) {
     return NextResponse.json({ error: "Missing required fields." }, { status: 400 });
   }
 
   const html = await render(
-    ContactEmail({ name, phone: phone || "", email, service: service || "", message })
+    ContactEmail({ name, phone: phone || "", email, address: address || "", service: service || "", message })
   );
 
   const transporter = nodemailer.createTransport({

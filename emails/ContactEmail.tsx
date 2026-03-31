@@ -17,11 +17,12 @@ interface Props {
   name: string;
   phone: string;
   email: string;
+  address: string;
   service: string;
   message: string;
 }
 
-export default function ContactEmail({ name, phone, email, service, message }: Props) {
+export default function ContactEmail({ name, phone, email, address, service, message }: Props) {
   return (
     <Html lang="en">
       <Head />
@@ -91,6 +92,16 @@ export default function ContactEmail({ name, phone, email, service, message }: P
                 <Text style={value}>{email}</Text>
               </Column>
             </Row>
+            {address && (
+              <Row>
+                <Column style={labelCol}>
+                  <Text style={label}>Address</Text>
+                </Column>
+                <Column style={valueCol}>
+                  <Text style={value}>{address}</Text>
+                </Column>
+              </Row>
+            )}
             {service && (
               <Row>
                 <Column style={labelCol}>
