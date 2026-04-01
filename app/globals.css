@@ -143,6 +143,35 @@ body {
 .btn-outline:hover::before { transform: scaleX(1); transform-origin: left; }
 .btn-outline > * { position: relative; z-index: 1; }
 
+/* ── Dark button (for use on light/white backgrounds) ─ */
+.btn-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--black);
+  color: var(--white);
+  font-family: var(--font-heading);
+  letter-spacing: 0.15em;
+  padding: 0.95rem 2.5rem;
+  font-size: 1rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s ease;
+}
+.btn-dark::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--grey-900);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.35s var(--ease-in-out);
+}
+.btn-dark:hover::before { transform: scaleX(1); transform-origin: left; }
+.btn-dark > * { position: relative; z-index: 1; }
+.btn-dark:hover { transform: translateY(-1px); }
+
 /* ── Section label ─────────────────────────────── */
 .section-label {
   display: inline-flex;
