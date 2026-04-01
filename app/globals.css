@@ -16,8 +16,8 @@
   --white:      #FFFFFF;
 
   /* Semantic text colours */
-  --text-on-dark:        #E8E8E8;   /* primary body on dark bg  */
-  --text-on-dark-muted:  #A0A0A0;   /* secondary on dark bg     */
+  --text-on-dark:        #F2F2F2;   /* primary body on dark bg  */
+  --text-on-dark-muted:  #B0B0B0;   /* secondary on dark bg     */
   --text-on-light:       #1A1A1A;   /* primary body on light bg */
   --text-on-light-muted: #555555;   /* secondary on light bg    */
 
@@ -83,7 +83,7 @@ body {
   background-color: rgba(10, 10, 10, 0.94);
   backdrop-filter: blur(20px) saturate(1.4);
   -webkit-backdrop-filter: blur(20px) saturate(1.4);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255,255,255,0.12);
 }
 
 /* ── Buttons ───────────────────────────────────── */
@@ -120,7 +120,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  border: 1px solid rgba(255,255,255,0.18);
+  border: 1px solid rgba(255,255,255,0.30);
   color: var(--text-on-dark);
   font-family: var(--font-heading);
   letter-spacing: 0.15em;
@@ -151,7 +151,7 @@ body {
   font-size: 0.75rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--grey-500);
+  color: var(--grey-300);
   font-family: var(--font-body);
 }
 .section-label::before {
@@ -159,7 +159,7 @@ body {
   display: block;
   width: 24px;
   height: 1px;
-  background-color: var(--grey-700);
+  background-color: var(--white);
   flex-shrink: 0;
 }
 
@@ -174,7 +174,7 @@ body {
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 2px;
-  background: var(--grey-700);
+  background: var(--white);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.4s var(--ease-out-expo);
@@ -280,6 +280,6 @@ body {
 /* ── Custom scrollbar ──────────────────────────── */
 ::-webkit-scrollbar       { width: 3px; }
 ::-webkit-scrollbar-track { background: var(--black); }
-::-webkit-scrollbar-thumb { background: var(--grey-900); }
-::-webkit-scrollbar-thumb:hover { background: var(--grey-700); }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.4); }
 ::selection { background-color: var(--grey-900); color: var(--white); }
