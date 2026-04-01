@@ -4,20 +4,20 @@
 
 /* ── CSS Variables ─────────────────────────────── */
 :root {
-  --black:      #0A0A0A;
-  --dark:       #1A1A1A;
-  --mid:        #111111;
-  --grey-900:   #333333;
-  --grey-700:   #555555;
-  --grey-500:   #888888;
-  --grey-300:   #B0B0B0;
-  --grey-200:   #D4D4D4;
-  --light:      #F5F5F5;
+  --black:      #141414;
+  --dark:       #1E1E1E;
+  --mid:        #1A1A1A;
+  --grey-900:   #3A3A3A;
+  --grey-700:   #606060;
+  --grey-500:   #909090;
+  --grey-300:   #C0C0C0;
+  --grey-200:   #DCDCDC;
+  --light:      #FFFFFF;
   --white:      #FFFFFF;
 
   /* Semantic text colours */
-  --text-on-dark:        #F2F2F2;   /* primary body on dark bg  */
-  --text-on-dark-muted:  #B0B0B0;   /* secondary on dark bg     */
+  --text-on-dark:        #F5F5F5;   /* primary body on dark bg  */
+  --text-on-dark-muted:  #BEBEBE;   /* secondary on dark bg     */
   --text-on-light:       #1A1A1A;   /* primary body on light bg */
   --text-on-light-muted: #555555;   /* secondary on light bg    */
 
