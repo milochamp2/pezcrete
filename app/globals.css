@@ -4,20 +4,20 @@
 
 /* ── CSS Variables ─────────────────────────────── */
 :root {
-  --black:      #141414;
-  --dark:       #1E1E1E;
-  --mid:        #1A1A1A;
-  --grey-900:   #3A3A3A;
-  --grey-700:   #606060;
-  --grey-500:   #909090;
+  --black:      #0A0A0A;
+  --dark:       #1A1A1A;
+  --mid:        #111111;
+  --grey-900:   #333333;
+  --grey-700:   #555555;
+  --grey-500:   #888888;
   --grey-300:   #C0C0C0;
   --grey-200:   #DCDCDC;
-  --light:      #FFFFFF;
+  --light:      #F5F5F5;
   --white:      #FFFFFF;
 
   /* Semantic text colours */
-  --text-on-dark:        #F5F5F5;   /* primary body on dark bg  */
-  --text-on-dark-muted:  #BEBEBE;   /* secondary on dark bg     */
+  --text-on-dark:        #F2F2F2;   /* primary body on dark bg  */
+  --text-on-dark-muted:  #B0B0B0;   /* secondary on dark bg     */
   --text-on-light:       #1A1A1A;   /* primary body on light bg */
   --text-on-light-muted: #555555;   /* secondary on light bg    */
 
@@ -29,14 +29,14 @@
 }
 
 /* ── Base ──────────────────────────────────────── */
-html { background-color: var(--black); }
+html { background-color: #F8F8F8; }
 
 body {
   font-family: var(--font-body);
-  font-size: 1.0625rem;          /* 17px base — was ~14-15px */
+  font-size: 1.0625rem;
   line-height: 1.75;
-  color: var(--text-on-dark);
-  background-color: var(--black);
+  color: var(--text-on-light);
+  background-color: #F8F8F8;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

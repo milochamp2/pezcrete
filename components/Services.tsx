@@ -76,7 +76,7 @@ export default function Services() {
     <section
       id="services"
       className="py-16 sm:py-24 lg:py-36"
-      style={{ backgroundColor: "var(--light)" }}
+      style={{ backgroundColor: "var(--black)" }}
     >
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
 
@@ -84,7 +84,7 @@ export default function Services() {
         <div className="mb-10 sm:mb-16">
           <p
             className="max-w-xs text-base leading-relaxed reveal"
-            style={{ color: "var(--text-on-light-muted)" }}
+            style={{ color: "var(--text-on-dark-muted)" }}
           >
             Every project handled with trade expertise and precision — on time, every time.
           </p>
@@ -95,29 +95,29 @@ export default function Services() {
           {services.map((service, i) => (
             <div
               key={service.title}
-              className={`service-card p-5 sm:p-8 border bg-white reveal reveal-delay-${i + 1}`}
-              style={{ borderColor: "var(--grey-200)" }}
+              className={`service-card p-5 sm:p-8 border reveal reveal-delay-${i + 1}`}
+              style={{ backgroundColor: "var(--dark)", borderColor: "rgba(255,255,255,0.07)" }}
             >
               {/* Number + icon row */}
               <div className="flex items-start justify-between mb-8">
                 <span
                   className="text-xs tracking-widest"
-                  style={{ color: "var(--grey-200)", fontFamily: "var(--font-heading)", fontSize: "0.7rem", letterSpacing: "0.2em" }}
+                  style={{ color: "var(--grey-700)", fontFamily: "var(--font-heading)", fontSize: "0.7rem", letterSpacing: "0.2em" }}
                 >
                   {service.num}
                 </span>
-                <div style={{ color: "var(--grey-700)" }}>
+                <div style={{ color: "var(--grey-500)" }}>
                   {service.icon}
                 </div>
               </div>
 
               <h3
                 className="text-2xl tracking-wide mb-3 leading-tight"
-                style={{ color: "var(--black)", fontFamily: "var(--font-heading)" }}
+                style={{ color: "var(--white)", fontFamily: "var(--font-heading)" }}
               >
                 {service.title}
               </h3>
-              <p className="text-base leading-relaxed" style={{ color: "var(--text-on-light-muted)" }}>
+              <p className="text-base leading-relaxed" style={{ color: "var(--text-on-dark-muted)" }}>
                 {service.description}
               </p>
             </div>
