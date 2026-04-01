@@ -9,16 +9,16 @@ export const metadata: Metadata = {
 export default function GalleryPage() {
   return (
     <>
-      <div className="pt-24 pb-12 sm:pt-32 sm:pb-16 lg:pt-40 lg:pb-20 grain" style={{ backgroundColor: "var(--black)" }}>
+      <div className="pt-24 pb-12 sm:pt-32 sm:pb-16 lg:pt-40 lg:pb-20">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
           <span className="section-label">Portfolio</span>
           <h1
-            className="mt-5 leading-none tracking-wide text-white"
-            style={{ fontFamily: "var(--font-heading)", fontSize: "clamp(3rem,12vw,9rem)" }}
+            className="mt-5 leading-none tracking-wide"
+            style={{ fontFamily: "var(--font-heading)", fontSize: "clamp(3rem,12vw,9rem)", color: "var(--black)" }}
           >
             OUR<br />WORK
           </h1>
-          <p className="mt-6 text-base lg:text-lg max-w-xl" style={{ color: "var(--text-on-dark-muted)" }}>
+          <p className="mt-6 text-base lg:text-lg max-w-xl" style={{ color: "var(--text-on-light-muted)" }}>
             A selection of completed projects across Melbourne and surrounds.
           </p>
         </div>

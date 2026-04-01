@@ -67,11 +67,9 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="py-16 sm:py-24 lg:py-36 grain relative"
-      style={{ backgroundColor: "var(--black)" }}
+      className="py-16 sm:py-24 lg:py-36 relative"
+      style={{ borderTop: "1px solid rgba(0,0,0,0.08)" }}
     >
-      {/* Top edge */}
-      <div className="absolute top-0 left-0 right-0 h-px" style={{ background: "rgba(255,255,255,0.05)" }} />
 
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
@@ -80,7 +78,7 @@ export default function Contact() {
           <div className="reveal reveal-delay-1">
             <p
               className="text-lg leading-relaxed mb-12"
-              style={{ color: "var(--text-on-dark-muted)" }}
+              style={{ color: "var(--text-on-light-muted)" }}
             >
               Ready to start your project? Get in touch for a free,
               no-obligation quote. We service Melbourne and all surrounding suburbs.
@@ -94,11 +92,11 @@ export default function Contact() {
                   target={item.href.startsWith("http") ? "_blank" : undefined}
                   rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
                   className="flex items-center gap-5 py-6 border-b group transition-colors duration-300"
-                  style={{ borderColor: "rgba(255,255,255,0.06)" }}
+                  style={{ borderColor: "rgba(0,0,0,0.08)" }}
                 >
                   <span
                     className="flex items-center justify-center w-8 h-8 border flex-shrink-0 transition-colors duration-300 group-hover:border-white/30"
-                    style={{ borderColor: "rgba(255,255,255,0.1)", color: "var(--grey-500)" }}
+                    style={{ borderColor: "rgba(0,0,0,0.1)", color: "var(--grey-500)" }}
                   >
                     {item.icon}
                   </span>
@@ -107,8 +105,8 @@ export default function Contact() {
                       {item.label}
                     </p>
                     <p
-                      className="text-base truncate transition-colors duration-300 group-hover:text-white"
-                      style={{ color: "var(--grey-200)" }}
+                      className="text-base truncate transition-colors duration-300 group-hover:text-black"
+                      style={{ color: "var(--grey-700)" }}
                     >
                       {item.value}
                     </p>
@@ -129,19 +127,19 @@ export default function Contact() {
             {submitted ? (
               <div
                 className="h-full flex flex-col items-center justify-center text-center py-16 border"
-                style={{ borderColor: "rgba(255,255,255,0.07)" }}
+                style={{ borderColor: "rgba(0,0,0,0.08)" }}
               >
                 <div
                   className="w-10 h-10 border flex items-center justify-center mb-6"
-                  style={{ borderColor: "rgba(255,255,255,0.15)" }}
+                  style={{ borderColor: "rgba(0,0,0,0.15)" }}
                 >
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-white">
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
                 </div>
                 <h3
-                  className="text-3xl text-white mb-2"
-                  style={{ fontFamily: "var(--font-heading)" }}
+                  className="text-3xl mb-2"
+                  style={{ color: "var(--black)", fontFamily: "var(--font-heading)" }}
                 >
                   Message Sent
                 </h3>

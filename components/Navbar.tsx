@@ -61,7 +61,7 @@ export default function Navbar() {
                 fontFamily: "var(--font-heading)",
                 letterSpacing: "0.18em",
                 fontSize: "clamp(1.25rem, 3vw, 1.75rem)",
-                color: "var(--white)",
+                color: "var(--black)",
                 lineHeight: 1,
               }}
             >
@@ -78,11 +78,11 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   className="relative text-xs tracking-widest uppercase transition-colors duration-300 py-1"
-                  style={{ color: active ? "var(--white)" : "var(--grey-300)" }}
+                  style={{ color: active ? "var(--black)" : "var(--grey-700)" }}
                 >
                   {link.label}
                   <span
-                    className="absolute bottom-0 left-0 h-px bg-white transition-all duration-300"
+                    className="absolute bottom-0 left-0 h-px bg-black transition-all duration-300"
                     style={{ width: active ? "100%" : "0%" }}
                   />
                 </Link>
@@ -104,9 +104,9 @@ export default function Navbar() {
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             onClick={() => setMenuOpen((v) => !v)}
           >
-            <span className={`block w-5 h-px bg-white transition-all duration-300 origin-center ${menuOpen ? "rotate-45 translate-y-[6px]" : ""}`} />
-            <span className={`block w-5 h-px bg-white transition-all duration-300 ${menuOpen ? "opacity-0 scale-x-0" : ""}`} />
-            <span className={`block w-5 h-px bg-white transition-all duration-300 origin-center ${menuOpen ? "-rotate-45 -translate-y-[6px]" : ""}`} />
+            <span className={`block w-5 h-px bg-black transition-all duration-300 origin-center ${menuOpen ? "rotate-45 translate-y-[6px]" : ""}`} />
+            <span className={`block w-5 h-px bg-black transition-all duration-300 ${menuOpen ? "opacity-0 scale-x-0" : ""}`} />
+            <span className={`block w-5 h-px bg-black transition-all duration-300 origin-center ${menuOpen ? "-rotate-45 -translate-y-[6px]" : ""}`} />
           </button>
         </div>
       </header>
@@ -116,7 +116,7 @@ export default function Navbar() {
         className={`md:hidden fixed inset-0 z-40 transition-opacity duration-300 ${
           menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
-        style={{ backgroundColor: "#0A0A0A", top: "3.75rem" }}
+        style={{ backgroundColor: "var(--white)", top: "3.75rem", borderTop: "1px solid rgba(0,0,0,0.08)" }}
       >
         <nav className="flex flex-col px-6 pt-8 pb-10 gap-1 h-full overflow-y-auto">
           {navLinks.map((link) => {
@@ -127,8 +127,8 @@ export default function Navbar() {
                 href={link.href}
                 className="flex items-center text-2xl tracking-widest uppercase transition-colors duration-200 border-b"
                 style={{
-                  color: active ? "var(--white)" : "var(--grey-300)",
-                  borderColor: "rgba(255,255,255,0.05)",
+                  color: active ? "var(--black)" : "var(--grey-700)",
+                  borderColor: "rgba(0,0,0,0.08)",
                   minHeight: "64px",
                   fontFamily: "var(--font-heading)",
                   letterSpacing: "0.15em",

@@ -2,17 +2,18 @@ import Image from "next/image";
 import Link from "next/link";
 
 const navLinks = [
-  { label: "Services", href: "/services" },
-  { label: "About",    href: "/about"    },
-  { label: "Gallery",  href: "/gallery"  },
-  { label: "Contact",  href: "/contact"  },
+  { label: "Services",     href: "/services"     },
+  { label: "About",        href: "/about"        },
+  { label: "Gallery",      href: "/gallery"      },
+  { label: "Testimonials", href: "/testimonials" },
+  { label: "Contact",      href: "/contact"      },
 ];
 
 export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer style={{ backgroundColor: "var(--mid)", borderTop: "1px solid rgba(255,255,255,0.05)" }}>
+    <footer style={{ backgroundColor: "var(--light)", borderTop: "1px solid rgba(0,0,0,0.08)" }}>
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 py-10 sm:py-14">
 
         {/* Top row */}
@@ -35,7 +36,7 @@ export default function Footer() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm tracking-widest uppercase transition-colors duration-200 hover:text-white"
+                className="text-sm tracking-widest uppercase transition-colors duration-200 hover:text-black"
                 style={{ color: "var(--grey-500)" }}
               >
                 {link.label}
@@ -45,10 +46,10 @@ export default function Footer() {
 
           {/* Contact quick links */}
           <div className="flex flex-col gap-2">
-            <a href="tel:0422340335" className="text-sm hover:text-white transition-colors duration-200" style={{ color: "var(--grey-300)" }}>
+            <a href="tel:0422340335" className="text-sm transition-colors duration-200 hover:text-black" style={{ color: "var(--grey-700)" }}>
               0422 340 335
             </a>
-            <a href="mailto:Pezcrete@outlook.com.au" className="text-sm hover:text-white transition-colors duration-200" style={{ color: "var(--grey-300)" }}>
+            <a href="mailto:Pezcrete@outlook.com.au" className="text-sm transition-colors duration-200 hover:text-black" style={{ color: "var(--grey-700)" }}>
               Pezcrete@outlook.com.au
             </a>
           </div>
@@ -57,12 +58,12 @@ export default function Footer() {
         {/* Bottom row */}
         <div
           className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t"
-          style={{ borderColor: "rgba(255,255,255,0.05)" }}
+          style={{ borderColor: "rgba(0,0,0,0.08)" }}
         >
-          <p className="text-xs tracking-widest" style={{ color: "var(--grey-700)" }}>
+          <p className="text-xs tracking-widest" style={{ color: "var(--grey-500)" }}>
             &copy; {year} Pezcrete. All rights reserved.
           </p>
-          <p className="text-xs tracking-widest uppercase" style={{ color: "var(--grey-700)" }}>
+          <p className="text-xs tracking-widest uppercase" style={{ color: "var(--grey-500)" }}>
             Melbourne &amp; Surrounds
           </p>
         </div>

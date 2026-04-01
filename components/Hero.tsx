@@ -15,18 +15,15 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-[100dvh] flex flex-col items-center justify-center grain overflow-hidden"
-      style={{ backgroundColor: "var(--black)", paddingTop: "3.75rem" }}
+      className="relative min-h-[100dvh] flex flex-col items-center justify-center overflow-hidden"
+      style={{ backgroundColor: "var(--white)", paddingTop: "3.75rem" }}
     >
-      {/* Background grid */}
+      {/* Subtle grid lines */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden>
         {[25, 50, 75].map((x) => (
           <div key={x} className="absolute top-0 bottom-0 w-px hidden sm:block"
-            style={{ left: `${x}%`, background: "rgba(255,255,255,0.022)" }} />
+            style={{ left: `${x}%`, background: "rgba(0,0,0,0.04)" }} />
         ))}
-        <div className="absolute inset-0" style={{
-          background: "radial-gradient(ellipse 90% 60% at 50% 45%, rgba(110,110,110,0.07) 0%, transparent 70%)"
-        }} />
       </div>
 
       {/* Content */}
@@ -53,14 +50,14 @@ export default function Hero() {
 
         {/* Divider */}
         <div className="flex items-center justify-center gap-4 mb-6 sm:mb-10 lg:mb-14">
-          <div className="h-px flex-1 max-w-16" style={{ backgroundColor: "rgba(255,255,255,0.1)" }} />
+          <div className="h-px flex-1 max-w-16" style={{ backgroundColor: "rgba(0,0,0,0.1)" }} />
           <span
             className="text-[0.65rem] sm:text-xs tracking-[0.2em] sm:tracking-[0.3em] uppercase"
             style={{ color: "var(--grey-500)" }}
           >
             Est. Melbourne, VIC
           </span>
-          <div className="h-px flex-1 max-w-16" style={{ backgroundColor: "rgba(255,255,255,0.1)" }} />
+          <div className="h-px flex-1 max-w-16" style={{ backgroundColor: "rgba(0,0,0,0.1)" }} />
         </div>
 
         {/* Headline */}
@@ -71,8 +68,8 @@ export default function Hero() {
             fontSize:   "clamp(3.25rem, 14vw, 13rem)",
           }}
         >
-          <span className="block text-white">CONCRETE.</span>
-          <span className="block" style={{ color: "rgba(255,255,255,0.42)" }}>
+          <span className="block" style={{ color: "var(--black)" }}>CONCRETE.</span>
+          <span className="block" style={{ color: "rgba(0,0,0,0.22)" }}>
             BUILT RIGHT.
           </span>
         </h1>
@@ -81,15 +78,15 @@ export default function Hero() {
         <p
           className="text-sm sm:text-base lg:text-lg uppercase mb-8 sm:mb-12 lg:mb-14 mx-auto"
           style={{
-            color:       "var(--text-on-dark-muted)",
+            color:         "var(--text-on-light-muted)",
             letterSpacing: "0.16em",
-            maxWidth:    "30rem",
+            maxWidth:      "30rem",
           }}
         >
           Melbourne&rsquo;s trusted concrete specialists
         </p>
 
-        {/* CTAs — stack on mobile, row on sm+ */}
+        {/* CTAs */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full max-w-sm sm:max-w-none mx-auto">
           <Link href="/contact" className="btn-primary w-full sm:w-auto">
             <span>Get a Free Quote</span>
@@ -106,9 +103,9 @@ export default function Hero() {
         style={{ opacity: loaded ? 1 : 0, transition: "opacity 0.8s ease 0.6s" }}
       >
         <div className="w-px h-10 sm:h-14 overflow-hidden relative mx-auto"
-          style={{ backgroundColor: "rgba(255,255,255,0.07)" }}>
+          style={{ backgroundColor: "rgba(0,0,0,0.08)" }}>
           <div className="absolute inset-0 w-full" style={{
-            background: "linear-gradient(to bottom, transparent, rgba(255,255,255,0.55), transparent)",
+            background: "linear-gradient(to bottom, transparent, rgba(0,0,0,0.4), transparent)",
             animation:  "scrollLine 2.4s ease-in-out infinite",
           }} />
         </div>
@@ -119,8 +116,8 @@ export default function Hero() {
         className="absolute bottom-8 right-8 text-right hidden lg:block"
         style={{ opacity: loaded ? 0.35 : 0, transition: "opacity 1s ease 0.7s" }}
       >
-        <p className="text-xs tracking-widest" style={{ color: "var(--grey-700)" }}>37°48′ S, 144°57′ E</p>
-        <p className="text-xs tracking-widest uppercase" style={{ color: "var(--grey-700)" }}>Melbourne, VIC</p>
+        <p className="text-xs tracking-widest" style={{ color: "var(--grey-500)" }}>37°48′ S, 144°57′ E</p>
+        <p className="text-xs tracking-widest uppercase" style={{ color: "var(--grey-500)" }}>Melbourne, VIC</p>
       </div>
 
       <style>{`

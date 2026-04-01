@@ -13,18 +13,17 @@ export default function ServicesPage() {
     <>
       {/* Page hero */}
       <div
-        className="pt-24 pb-12 sm:pt-32 sm:pb-16 lg:pt-40 lg:pb-20 grain"
-        style={{ backgroundColor: "var(--black)" }}
+        className="pt-24 pb-12 sm:pt-32 sm:pb-16 lg:pt-40 lg:pb-20"
       >
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
           <span className="section-label">What we do</span>
           <h1
-            className="mt-5 leading-none tracking-wide text-white"
-            style={{ fontFamily: "var(--font-heading)", fontSize: "clamp(3rem,12vw,9rem)" }}
+            className="mt-5 leading-none tracking-wide"
+            style={{ color: "var(--black)", fontFamily: "var(--font-heading)", fontSize: "clamp(3rem,12vw,9rem)" }}
           >
             OUR<br />SERVICES
           </h1>
-          <p className="mt-6 text-base lg:text-lg max-w-xl" style={{ color: "var(--text-on-dark-muted)" }}>
+          <p className="mt-6 text-base lg:text-lg max-w-xl" style={{ color: "var(--text-on-light-muted)" }}>
             Every job handled with precision — residential, commercial, and structural concrete across Melbourne and surrounds.
           </p>
         </div>

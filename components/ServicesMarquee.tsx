@@ -26,7 +26,7 @@ interface Props {
   theme?: "dark" | "light";
 }
 
-export default function ServicesMarquee({ theme = "dark" }: Props) {
+export default function ServicesMarquee({ theme = "light" }: Props) {
   const isLight = theme === "light";
 
   return (

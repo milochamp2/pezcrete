@@ -80,10 +80,10 @@ body {
 
 /* ── Navbar ────────────────────────────────────── */
 .nav-scrolled {
-  background-color: rgba(10, 10, 10, 0.94);
+  background-color: rgba(255,255,255,0.96);
   backdrop-filter: blur(20px) saturate(1.4);
   -webkit-backdrop-filter: blur(20px) saturate(1.4);
-  border-bottom: 1px solid rgba(255,255,255,0.12);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
 }
 
 /* ── Buttons ───────────────────────────────────── */
@@ -92,21 +92,21 @@ body {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  background-color: var(--white);
-  color: var(--black);
+  background-color: var(--black);
+  color: var(--white);
   font-family: var(--font-heading);
   letter-spacing: 0.15em;
   padding: 1rem 2.75rem;
   font-size: 1rem;
   position: relative;
   overflow: hidden;
-  transition: color 0.35s ease, transform 0.25s ease;
+  transition: transform 0.25s ease;
 }
 .btn-primary::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-color: var(--grey-200);
+  background-color: var(--grey-900);
   transform: scaleX(0);
   transform-origin: right;
   transition: transform 0.35s var(--ease-in-out);
@@ -120,8 +120,8 @@ body {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  border: 1px solid rgba(255,255,255,0.30);
-  color: var(--text-on-dark);
+  border: 1px solid rgba(0,0,0,0.25);
+  color: var(--text-on-light);
   font-family: var(--font-heading);
   letter-spacing: 0.15em;
   padding: 0.95rem 2.5rem;
@@ -134,16 +134,16 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background-color: rgba(255,255,255,0.07);
+  background-color: rgba(0,0,0,0.05);
   transform: scaleX(0);
   transform-origin: right;
   transition: transform 0.35s var(--ease-in-out);
 }
-.btn-outline:hover { border-color: rgba(255,255,255,0.45); transform: translateY(-1px); }
+.btn-outline:hover { border-color: rgba(0,0,0,0.5); transform: translateY(-1px); }
 .btn-outline:hover::before { transform: scaleX(1); transform-origin: left; }
 .btn-outline > * { position: relative; z-index: 1; }
 
-/* ── Dark button (for use on light/white backgrounds) ─ */
+/* btn-dark is now identical to btn-primary */
 .btn-dark {
   display: inline-flex;
   align-items: center;
@@ -188,7 +188,7 @@ body {
   display: block;
   width: 24px;
   height: 1px;
-  background-color: var(--white);
+  background-color: var(--grey-500);
   flex-shrink: 0;
 }
 
@@ -228,11 +228,11 @@ body {
 }
 .marquee-wrapper::before {
   left: 0;
-  background: linear-gradient(to right, var(--black), transparent);
+  background: linear-gradient(to right, var(--white), transparent);
 }
 .marquee-wrapper::after {
   right: 0;
-  background: linear-gradient(to left, var(--black), transparent);
+  background: linear-gradient(to left, var(--white), transparent);
 }
 .marquee-track {
   display: flex;
@@ -290,20 +290,19 @@ body {
 /* ── Form ──────────────────────────────────────── */
 .form-input {
   width: 100%;
-  background-color: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.1);
-  color: var(--text-on-dark);
+  background-color: var(--white);
+  border: 1px solid rgba(0,0,0,0.15);
+  color: var(--text-on-light);
   padding: 0.95rem 1.1rem;
   font-family: var(--font-body);
   font-size: 1rem;
-  transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
   outline: none;
 }
-.form-input::placeholder { color: rgba(136,136,136,0.55); }
+.form-input::placeholder { color: rgba(0,0,0,0.3); }
 .form-input:focus {
-  border-color: rgba(255,255,255,0.3);
-  background-color: rgba(255,255,255,0.06);
-  box-shadow: 0 0 0 3px rgba(255,255,255,0.03);
+  border-color: rgba(0,0,0,0.4);
+  box-shadow: 0 0 0 3px rgba(0,0,0,0.04);
 }
 
 /* ── Custom scrollbar ──────────────────────────── */

@@ -9,7 +9,7 @@ const preview = [
 
 export default function GalleryTeaser() {
   return (
-    <section className="py-16 sm:py-24 lg:py-32" style={{ backgroundColor: "var(--black)" }}>
+    <section className="py-16 sm:py-24 lg:py-32">
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
 
         {/* Header */}
@@ -17,15 +17,15 @@ export default function GalleryTeaser() {
           <div className="reveal">
             <span className="section-label">Our Work</span>
             <h2
-              className="mt-4 leading-none tracking-wide text-white"
-              style={{ fontFamily: "var(--font-heading)", fontSize: "clamp(3rem,8vw,6rem)" }}
+              className="mt-4 leading-none tracking-wide"
+              style={{ fontFamily: "var(--font-heading)", fontSize: "clamp(3rem,8vw,6rem)", color: "var(--black)" }}
             >
               GALLERY
             </h2>
           </div>
           <Link
             href="/gallery"
-            className="text-sm tracking-widest uppercase reveal reveal-delay-1 transition-colors duration-300 hover:text-white"
+            className="text-sm tracking-widest uppercase reveal reveal-delay-1 transition-colors duration-300"
             style={{ color: "var(--grey-500)" }}
           >
             View All Work →
@@ -48,7 +48,7 @@ export default function GalleryTeaser() {
         </div>
 
         <div className="mt-10 text-center reveal reveal-delay-2">
-          <Link href="/gallery" className="btn-outline">
+          <Link href="/gallery" className="btn-primary">
             <span>View Full Gallery</span>
           </Link>
         </div>

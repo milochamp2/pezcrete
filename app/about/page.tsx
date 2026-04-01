@@ -11,12 +11,12 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <div className="pt-24 pb-12 sm:pt-32 sm:pb-16 lg:pt-40 lg:pb-20 grain" style={{ backgroundColor: "var(--black)" }}>
+      <div className="pt-24 pb-12 sm:pt-32 sm:pb-16 lg:pt-40 lg:pb-20">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
           <span className="section-label">Our story</span>
           <h1
-            className="mt-5 leading-none tracking-wide text-white"
-            style={{ fontFamily: "var(--font-heading)", fontSize: "clamp(3rem,12vw,9rem)" }}
+            className="mt-5 leading-none tracking-wide"
+            style={{ color: "var(--black)", fontFamily: "var(--font-heading)", fontSize: "clamp(3rem,12vw,9rem)" }}
           >
             ABOUT<br />PEZCRETE
           </h1>

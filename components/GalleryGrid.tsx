@@ -63,7 +63,7 @@ const InstagramIcon = () => (
 
 export default function GalleryGrid() {
   return (
-    <section className="py-8 sm:py-12 lg:py-20" style={{ backgroundColor: "var(--black)" }}>
+    <section className="py-8 sm:py-12 lg:py-20">
       <div className="max-w-7xl mx-auto px-3 sm:px-5 lg:px-10">
 
         {/* Uniform grid — 2 cols mobile, 3 md, 4 lg */}
