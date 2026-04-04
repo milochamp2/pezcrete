@@ -55,10 +55,11 @@ export default function Contact() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       });
-      if (!res.ok) throw new Error("Failed to send");
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "Failed to send");
       setSubmitted(true);
-    } catch {
-      setError("Something went wrong. Please try again or call us directly.");
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong. Please try again or call us directly.");
     } finally {
       setSending(false);
     }
@@ -187,9 +188,9 @@ export default function Contact() {
                     className="form-input"
                     style={{ cursor: "pointer", appearance: "none", backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E")`, backgroundRepeat: "no-repeat", backgroundPosition: "right 1rem center" }}
                   >
-                    <option value="" style={{ backgroundColor: "#111" }}>Select a service…</option>
+                    <option value="">Select a service…</option>
                     {services.map((s) => (
-                      <option key={s} value={s} style={{ backgroundColor: "#111" }}>{s}</option>
+                      <option key={s} value={s}>{s}</option>
                     ))}
                   </select>
                 </div>
@@ -203,7 +204,7 @@ export default function Contact() {
                   <span>{sending ? "Sending…" : "Send Message"}</span>
                 </button>
                 {error && (
-                  <p className="text-xs mt-2 text-center" style={{ color: "var(--grey-500)" }}>{error}</p>
+                  <p className="text-xs mt-2 text-center" style={{ color: "#cc0000" }}>{error}</p>
                 )}
               </form>
             )}

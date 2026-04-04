@@ -15,30 +15,31 @@ export async function POST(req: NextRequest) {
   );
 
   const transporter = nodemailer.createTransport({
-    host: "smtp-mail.outlook.com",
-    port: 587,
-    secure: false,
+    service: "gmail",
     auth: {
-      user: process.env.OUTLOOK_USER,
-      pass: process.env.OUTLOOK_PASSWORD,
-    },
-    tls: {
-      ciphers: "SSLv3",
+      user: process.env.GMAIL_USER,
+      pass: process.env.GMAIL_APP_PASSWORD,
     },
   });
 
-  await transporter.sendMail({
-    from: `"Pezcrete Website" <${process.env.OUTLOOK_USER}>`,
-    to: process.env.OUTLOOK_USER,
-    replyTo: email,
-    subject: `New Quote Request — ${name}${service ? ` · ${service}` : ""}`,
-    html,
-    headers: {
-      "X-Priority": "1",
-      "X-MSMail-Priority": "High",
-      "Importance": "high",
-    },
-  });
+  try {
+    await transporter.sendMail({
+      from: `"Pezcrete Website" <${process.env.GMAIL_USER}>`,
+      to: "Pezcrete@outlook.com.au",
+      replyTo: email,
+      subject: `New Quote Request — ${name}${service ? ` · ${service}` : ""}`,
+      html,
+      headers: {
+        "X-Priority": "1",
+        "X-MSMail-Priority": "High",
+        "Importance": "high",
+      },
+    });
+  } catch (err) {
+    const message = err instanceof Error ? err.message : String(err);
+    console.error("Mail send error:", message);
+    return NextResponse.json({ error: message }, { status: 500 });
+  }
 
   return NextResponse.json({ ok: true });
 }
