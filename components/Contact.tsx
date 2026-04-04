@@ -134,7 +134,7 @@ export default function Contact() {
                   className="w-10 h-10 border flex items-center justify-center mb-6"
                   style={{ borderColor: "rgba(0,0,0,0.15)" }}
                 >
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-white">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-black">
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
                 </div>
