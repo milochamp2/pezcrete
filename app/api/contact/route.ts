@@ -15,16 +15,21 @@ export async function POST(req: NextRequest) {
   );
 
   const transporter = nodemailer.createTransport({
-    service: "gmail",
+    host: "smtp-mail.outlook.com",
+    port: 587,
+    secure: false,
     auth: {
-      user: process.env.GMAIL_USER,
-      pass: process.env.GMAIL_APP_PASSWORD,
+      user: process.env.OUTLOOK_USER,
+      pass: process.env.OUTLOOK_PASSWORD,
+    },
+    tls: {
+      ciphers: "SSLv3",
     },
   });
 
   await transporter.sendMail({
-    from: `"Pezcrete Website" <${process.env.GMAIL_USER}>`,
-    to: "alananoaj@gmail.com",
+    from: `"Pezcrete Website" <${process.env.OUTLOOK_USER}>`,
+    to: process.env.OUTLOOK_USER,
     replyTo: email,
     subject: `New Quote Request — ${name}${service ? ` · ${service}` : ""}`,
     html,
