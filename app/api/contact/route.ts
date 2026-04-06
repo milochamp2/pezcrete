@@ -17,14 +17,14 @@ export async function POST(req: NextRequest) {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: process.env.GMAIL_USER,
-      pass: process.env.GMAIL_APP_PASSWORD,
+      user: "pezcrete2024@gmail.com",
+      pass: process.env.PEZCRETE_GMAIL_APP_PASSWORD,
     },
   });
 
   try {
     await transporter.sendMail({
-      from: `"Pezcrete Website" <${process.env.GMAIL_USER}>`,
+      from: `"Pezcrete Website" <pezcrete2024@gmail.com>`,
       to: "Pezcrete@outlook.com.au",
       replyTo: email,
       subject: `New Quote Request — ${name}${service ? ` · ${service}` : ""}`,
