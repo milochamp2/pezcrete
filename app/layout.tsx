@@ -21,6 +21,7 @@ const instrumentSans = Instrument_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://pezcrete.com.au"),
   title: "Pezcrete | Concrete Construction Melbourne",
   description:
     "Pezcrete delivers premium concrete construction services across Melbourne and surrounds — concrete placement, exposed aggregate, pool surrounds, structural works, and more.",
@@ -33,18 +34,13 @@ export const metadata: Metadata = {
     "concrete contractor Melbourne",
     "Pezcrete",
   ],
-  icons: {
-    icon:      "/logo/pezcrete%20logo.png",
-    shortcut:  "/logo/pezcrete%20logo.png",
-    apple:     "/logo/pezcrete%20logo.png",
-  },
   openGraph: {
     title: "Pezcrete | Concrete Construction Melbourne",
     description:
       "Premium concrete construction services across Melbourne and surrounds.",
     type: "website",
     locale: "en_AU",
-    images: [{ url: "/logo/pezcrete%20logo.png", width: 400, height: 200, alt: "Pezcrete" }],
+    url: "https://pezcrete.com.au",
   },
 };
 
