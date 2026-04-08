@@ -4,6 +4,7 @@ import GalleryGrid from "@/components/GalleryGrid";
 export const metadata: Metadata = {
   title: "Gallery | Pezcrete — Concrete Construction Melbourne",
   description: "View Pezcrete's completed concrete projects across Melbourne — driveways, pool surrounds, exposed aggregate, and more.",
+  alternates: { canonical: "/gallery" },
 };
 
 export default function GalleryPage() {

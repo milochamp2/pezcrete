@@ -4,6 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Testimonials | Pezcrete — Concrete Construction Melbourne",
   description: "What our clients say about Pezcrete. Real reviews from Melbourne homeowners and businesses.",
+  alternates: { canonical: "/testimonials" },
 };
 
 export default function TestimonialsPage() {

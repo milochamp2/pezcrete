@@ -6,6 +6,7 @@ import CtaStrip from "@/components/CtaStrip";
 export const metadata: Metadata = {
   title: "About | Pezcrete — Concrete Construction Melbourne",
   description: "Learn about Pezcrete — Melbourne's trusted concrete specialists with years of hands-on experience.",
+  alternates: { canonical: "/about" },
 };
 
 export default function AboutPage() {

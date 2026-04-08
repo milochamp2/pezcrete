@@ -6,6 +6,7 @@ import CtaStrip from "@/components/CtaStrip";
 export const metadata: Metadata = {
   title: "Services | Pezcrete — Concrete Construction Melbourne",
   description: "Concrete placement, boxing & steel, exposed aggregate, pool surrounds, and structural works across Melbourne.",
+  alternates: { canonical: "/services" },
 };
 
 export default function ServicesPage() {

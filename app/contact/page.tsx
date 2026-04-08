@@ -5,6 +5,7 @@ import ServiceArea from "@/components/ServiceArea";
 export const metadata: Metadata = {
   title: "Contact | Pezcrete — Concrete Construction Melbourne",
   description: "Get a free quote from Pezcrete. Call 0422 340 335 or send us a message.",
+  alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {
