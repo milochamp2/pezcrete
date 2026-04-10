@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Bebas_Neue, Instrument_Sans } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -50,6 +51,16 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${bebasNeue.variable} ${instrumentSans.variable}`}>
       <body className="font-body antialiased">
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18067254282"
+          strategy="afterInteractive"
+        />
+        <Script id="google-tag" strategy="afterInteractive">{`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'AW-18067254282');
+        `}</Script>
         <PageLoader />
         <SmoothScroll />
         <ScrollProgress />
