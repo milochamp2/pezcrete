@@ -58,6 +58,9 @@ export default function Contact() {
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Failed to send");
       setSubmitted(true);
+      if (typeof window !== "undefined" && typeof (window as { gtag?: (...args: unknown[]) => void }).gtag === "function") {
+        (window as { gtag: (...args: unknown[]) => void }).gtag("event", "ads_conversion_Contact_Us_1", {});
+      }
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong. Please try again or call us directly.");
     } finally {
