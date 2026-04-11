@@ -58,8 +58,12 @@ export default function Contact() {
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Failed to send");
       setSubmitted(true);
-      if (typeof window !== "undefined" && typeof (window as { gtag?: (...args: unknown[]) => void }).gtag === "function") {
-        (window as { gtag: (...args: unknown[]) => void }).gtag("event", "ads_conversion_Contact_Us_1", {});
+      if (typeof window !== "undefined") {
+        const _gtag = (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag;
+        if (typeof _gtag === "function") {
+          _gtag("event", "ads_conversion_Contact_Us_1", {});
+          _gtag("event", "conversion", { send_to: "AW-18067254282/zdyqCN7SupkcEIrYkadD" });
+        }
       }
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong. Please try again or call us directly.");
