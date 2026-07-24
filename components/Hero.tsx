@@ -4,6 +4,13 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+const heroVideos = [
+  "/vids/hero-1.mp4",
+  "/vids/hero-2.mp4",
+  "/vids/hero-3.mp4",
+  "/vids/hero-4.mp4",
+];
+
 export default function Hero() {
   const [loaded, setLoaded] = useState(false);
 
@@ -16,13 +23,40 @@ export default function Hero() {
     <section
       id="hero"
       className="relative min-h-[100dvh] flex flex-col items-center justify-center overflow-hidden"
-      style={{ backgroundColor: "var(--white)", paddingTop: "3.75rem" }}
+      style={{ backgroundColor: "var(--white)", paddingTop: "5.5rem" }}
     >
+      {/* Highlight-reel background */}
+      <div className="absolute inset-0 pointer-events-none" aria-hidden>
+        <div className="absolute inset-0 grid grid-cols-2 sm:grid-cols-4">
+          {heroVideos.map((src, i) => (
+            <div key={src} className="relative overflow-hidden">
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="auto"
+                className="absolute inset-0 w-full h-full object-cover"
+                style={{
+                  filter:     "grayscale(1) contrast(1.05)",
+                  opacity:    loaded ? 1 : 0,
+                  transition: `opacity 1.2s var(--ease-out-expo) ${i * 0.12}s`,
+                }}
+              >
+                <source src={src} type="video/mp4" />
+              </video>
+            </div>
+          ))}
+        </div>
+        {/* Wash so headline/content stay legible over the footage */}
+        <div className="absolute inset-0" style={{ backgroundColor: "rgba(255,255,255,0.84)" }} />
+      </div>
+
       {/* Subtle grid lines */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden>
         {[25, 50, 75].map((x) => (
           <div key={x} className="absolute top-0 bottom-0 w-px hidden sm:block"
-            style={{ left: `${x}%`, background: "rgba(0,0,0,0.04)" }} />
+            style={{ left: `${x}%`, background: "rgba(0,0,0,0.06)" }} />
         ))}
       </div>
 

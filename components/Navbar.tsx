@@ -41,26 +41,26 @@ export default function Navbar() {
       >
         {/* Main bar */}
         <div
-          className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 flex items-center justify-between"
-          style={{ height: "3.75rem" }}
+          className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 flex items-center justify-between"
+          style={{ height: "5.5rem" }}
         >
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 opacity-95 hover:opacity-100 transition-opacity duration-300">
             <Image
               src="/logo/pezcrete%20logo.png"
               alt="Pezcrete"
-              width={180}
-              height={56}
+              width={220}
+              height={68}
               priority
               className="w-auto object-contain"
-              style={{ height: "clamp(2.75rem, 6vw, 3.75rem)" }}
+              style={{ height: "clamp(3rem, 7vw, 4.75rem)" }}
             />
             <span
               className="hidden sm:block"
               style={{
                 fontFamily: "var(--font-heading)",
                 letterSpacing: "0.18em",
-                fontSize: "clamp(1.25rem, 3vw, 1.75rem)",
+                fontSize: "clamp(1.5rem, 3.4vw, 2.1rem)",
                 color: "var(--black)",
                 lineHeight: 1,
               }}
@@ -70,7 +70,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-7 lg:gap-9">
+          <nav className="hidden md:flex items-center gap-8 lg:gap-10">
             {navLinks.map((link) => {
               const active = pathname === link.href;
               return (
@@ -100,7 +100,7 @@ export default function Navbar() {
           {/* Hamburger */}
           <button
             className="md:hidden flex flex-col justify-center items-center gap-[5px]"
-            style={{ width: "44px", height: "44px" }}
+            style={{ width: "48px", height: "48px" }}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             onClick={() => setMenuOpen((v) => !v)}
           >
@@ -116,7 +116,7 @@ export default function Navbar() {
         className={`md:hidden fixed inset-0 z-40 transition-opacity duration-300 ${
           menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
-        style={{ backgroundColor: "var(--white)", top: "3.75rem", borderTop: "1px solid rgba(0,0,0,0.08)" }}
+        style={{ backgroundColor: "var(--white)", top: "5.5rem", borderTop: "1px solid rgba(0,0,0,0.08)" }}
       >
         <nav className="flex flex-col px-6 pt-8 pb-10 gap-1 h-full overflow-y-auto">
           {navLinks.map((link) => {
