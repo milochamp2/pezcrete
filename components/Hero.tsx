@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -13,10 +13,34 @@ const heroVideos = [
 
 export default function Hero() {
   const [loaded, setLoaded] = useState(false);
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
   useEffect(() => {
     const t = setTimeout(() => setLoaded(true), 2100);
     return () => clearTimeout(t);
+  }, []);
+
+  useEffect(() => {
+    // iOS Safari (esp. in Low Power Mode) can ignore the declarative
+    // `muted` attribute from React and block autoplay, surfacing a
+    // native play button. Force it via the DOM property + explicit
+    // play(), and retry on first user gesture as a fallback.
+    const tryPlayAll = () => {
+      videoRefs.current.forEach((v) => {
+        if (!v) return;
+        v.muted = true;
+        v.play().catch(() => {});
+      });
+    };
+
+    tryPlayAll();
+
+    window.addEventListener("touchstart", tryPlayAll, { once: true });
+    window.addEventListener("scroll", tryPlayAll, { once: true });
+    return () => {
+      window.removeEventListener("touchstart", tryPlayAll);
+      window.removeEventListener("scroll", tryPlayAll);
+    };
   }, []);
 
   return (
@@ -31,10 +55,12 @@ export default function Hero() {
           {heroVideos.map((src, i) => (
             <div key={src} className="relative overflow-hidden">
               <video
+                ref={(el) => { videoRefs.current[i] = el; }}
                 autoPlay
                 loop
                 muted
                 playsInline
+                disablePictureInPicture
                 preload="auto"
                 className="absolute inset-0 w-full h-full object-cover"
                 style={{
